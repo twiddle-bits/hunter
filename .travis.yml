@@ -37,7 +37,7 @@ env:
 
   # Support *.pc files
   # * https://travis-ci.org/ingenue/hunter/jobs/105847764
-  - PROJECT_DIR=examples/SQLite3 TOOLCHAIN=ios-nocodesign
+  # - PROJECT_DIR=examples/SQLite3 TOOLCHAIN=ios-nocodesign
 
   - PROJECT_DIR=examples/SQLite3 TOOLCHAIN=android-ndk-r10e-api-19-armeabi-v7a-neon
 
