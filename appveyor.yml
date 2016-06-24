@@ -7,41 +7,59 @@ environment:
       secure: uW6WWlvCt7CRvvdO9ePjbymPcPNuV1C6HGF8u7Ey6EI=
 
   matrix:
-    - TOOLCHAIN: "default"
-      PROJECT_DIR: examples\qt-widgets
+    # - TOOLCHAIN: "default"
+    #   PROJECT_DIR: examples\qt-widgets
 
-    - TOOLCHAIN: "ninja-vs-12-2013-win64"
-      PROJECT_DIR: examples\qt-widgets
+    # - TOOLCHAIN: "ninja-vs-12-2013-win64"
+    #   PROJECT_DIR: examples\qt-widgets
 
-    - TOOLCHAIN: "nmake-vs-12-2013-win64"
-      PROJECT_DIR: examples\qt-widgets
+    # - TOOLCHAIN: "nmake-vs-12-2013-win64"
+    #   PROJECT_DIR: examples\qt-widgets
 
-    - TOOLCHAIN: "nmake-vs-12-2013"
-      PROJECT_DIR: examples\qt-widgets
+    # - TOOLCHAIN: "nmake-vs-12-2013"
+    #   PROJECT_DIR: examples\qt-widgets
 
-    - TOOLCHAIN: "vs-10-2010"
-      PROJECT_DIR: examples\qt-widgets
+    # - TOOLCHAIN: "vs-10-2010"
+    #   PROJECT_DIR: examples\qt-widgets
 
-    - TOOLCHAIN: "vs-11-2012"
-      PROJECT_DIR: examples\qt-widgets
+    # - TOOLCHAIN: "vs-11-2012"
+    #   PROJECT_DIR: examples\qt-widgets
 
-    - TOOLCHAIN: "vs-12-2013-win64"
-      PROJECT_DIR: examples\qt-widgets
+    # - TOOLCHAIN: "vs-12-2013-win64"
+    #   PROJECT_DIR: examples\qt-widgets
 
-    - TOOLCHAIN: "vs-12-2013-xp"
-      PROJECT_DIR: examples\qt-widgets
+    # - TOOLCHAIN: "vs-12-2013-xp"
+    #   PROJECT_DIR: examples\qt-widgets
 
     - TOOLCHAIN: "vs-12-2013"
       PROJECT_DIR: examples\qt-widgets
+    - TOOLCHAIN: "vs-12-2013"
+      PROJECT_DIR: examples\qt-qml
+    - TOOLCHAIN: "vs-12-2013"
+      PROJECT_DIR: examples\qt-location
+    - TOOLCHAIN: "vs-12-2013"
+      PROJECT_DIR: examples\qt-camera
 
     - TOOLCHAIN: "vs-14-2015"
       PROJECT_DIR: examples\qt-widgets
+    - TOOLCHAIN: "vs-14-2015"
+      PROJECT_DIR: examples\qt-qml
+    - TOOLCHAIN: "vs-14-2015"
+      PROJECT_DIR: examples\qt-location
+    - TOOLCHAIN: "vs-14-2015"
+      PROJECT_DIR: examples\qt-camera
 
-    - TOOLCHAIN: "vs-9-2008"
-      PROJECT_DIR: examples\qt-widgets
+    # - TOOLCHAIN: "vs-9-2008"
+    #   PROJECT_DIR: examples\qt-widgets
 
     - TOOLCHAIN: "mingw"
       PROJECT_DIR: examples\qt-widgets
+    - TOOLCHAIN: "mingw"
+      PROJECT_DIR: examples\qt-qml
+    - TOOLCHAIN: "mingw"
+      PROJECT_DIR: examples\qt-location
+    - TOOLCHAIN: "mingw"
+      PROJECT_DIR: examples\qt-camera
 
 install:
   # Python 3
@@ -70,6 +88,9 @@ install:
   # Use MinGW from Qt tools because version is higher
   # * http://www.appveyor.com/docs/installed-software#qt
   - cmd: set MINGW_PATH=C:\Qt\Tools\mingw492_32\bin
+
+  # MSYS2 location
+  - cmd: set MSYS_PATH=C:\msys64\usr\bin
 
   - git submodule update --init --recursive
 
