@@ -127,8 +127,7 @@ def run():
 
   if (
       os.getenv('TRAVIS') and
-      (project_dir == 'examples/GSL') and
-      (toolchain == 'xcode')
+      (toolchain == 'android-ndk-r10e-api-19-armeabi-v7a-neon')
   ):
     verbose = False
 
