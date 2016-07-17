@@ -49,8 +49,8 @@ environment:
     # - TOOLCHAIN: "mingw"
     #   PROJECT_DIR: examples\SQLite3
 
-    - TOOLCHAIN: "msys"
-      PROJECT_DIR: examples\Foo
+    # - TOOLCHAIN: "msys"
+    #   PROJECT_DIR: examples\SQLite3
 
 install:
   # Python 3
