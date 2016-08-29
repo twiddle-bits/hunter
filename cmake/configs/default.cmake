@@ -171,7 +171,10 @@ hunter_config(xshmfence VERSION 1.2)
 hunter_config(xtrans VERSION 1.2.7)
 hunter_config(xxf86vm VERSION 1.1.2)
 
-if(IOS)
+string(COMPARE EQUAL "${CMAKE_GENERATOR}" "Ninja" _is_ninja)
+if(MSVC AND _is_ninja)
+  hunter_config(OpenSSL VERSION 1.0.2h)
+elseif(IOS)
   # Build broken: https://github.com/openssl/openssl/issues/1506
   hunter_config(OpenSSL VERSION 1.0.2h)
 else()
