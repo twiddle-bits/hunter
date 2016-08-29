@@ -63,14 +63,6 @@ else()
   set(opt "VC-WIN32")
 endif()
 
-if("@MSVC@")
-  # Logging as Workaround for VS_UNICODE_OUTPUT issue:
-  # https://public.kitware.com/Bug/view.php?id=14266
-  set(log_opts LOG_CONFIGURE 1)
-else()
-  set(log_opts "")
-endif()
-
 ExternalProject_Add(
     "@HUNTER_EP_NAME@"
     URL
