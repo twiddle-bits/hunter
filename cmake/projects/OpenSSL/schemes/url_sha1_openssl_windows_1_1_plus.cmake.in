@@ -85,6 +85,12 @@ ExternalProject_Add(
     "@HUNTER_PACKAGE_INSTALL_PREFIX@"
         # not used, just avoid creating Install/<name> empty directory
     CONFIGURE_COMMAND
+    set CC= # Need unset some variables: https://ci.appveyor.com/project/ingenue/hunter/build/1.0.862/job/s8evhqmx8qy0mgoc
+    COMMAND
+    set CXX=
+    COMMAND
+    set RC=
+    COMMAND
     "@HUNTER_MSVC_VCVARSALL@" "@HUNTER_MSVC_ARCH@"
     COMMAND
     perl Configure "${opt}" no-asm "--prefix=@HUNTER_PACKAGE_INSTALL_PREFIX@" "--openssldir=@HUNTER_PACKAGE_INSTALL_PREFIX@\\ssl"
