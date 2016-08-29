@@ -118,6 +118,7 @@ if(WIN32 AND NOT CYGWIN)
 
     find_library(LIB_EAY_DEBUG
       NAMES
+        libcryptod
         libeay32${_OPENSSL_MSVC_RT_MODE}d
         libeay32d
       HINTS
@@ -128,6 +129,7 @@ if(WIN32 AND NOT CYGWIN)
 
     find_library(LIB_EAY_RELEASE
       NAMES
+        libcrypto
         libeay32${_OPENSSL_MSVC_RT_MODE}
         libeay32
       HINTS
@@ -138,6 +140,7 @@ if(WIN32 AND NOT CYGWIN)
 
     find_library(SSL_EAY_DEBUG
       NAMES
+        libssld
         ssleay32${_OPENSSL_MSVC_RT_MODE}d
         ssleay32d
       HINTS
@@ -148,6 +151,7 @@ if(WIN32 AND NOT CYGWIN)
 
     find_library(SSL_EAY_RELEASE
       NAMES
+        libssl
         ssleay32${_OPENSSL_MSVC_RT_MODE}
         ssleay32
         ssl
