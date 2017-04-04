@@ -19,17 +19,17 @@ environment:
     - TOOLCHAIN: "nmake-vs-12-2013"
       PROJECT_DIR: examples\benchmark
 
-    - TOOLCHAIN: "vs-10-2010"
-      PROJECT_DIR: examples\benchmark
+    # - TOOLCHAIN: "vs-10-2010"
+    #   PROJECT_DIR: examples\benchmark
 
-    - TOOLCHAIN: "vs-11-2012"
-      PROJECT_DIR: examples\benchmark
+    # - TOOLCHAIN: "vs-11-2012"
+    #   PROJECT_DIR: examples\benchmark
 
     - TOOLCHAIN: "vs-12-2013-win64"
       PROJECT_DIR: examples\benchmark
 
-    - TOOLCHAIN: "vs-12-2013-xp"
-      PROJECT_DIR: examples\benchmark
+    # - TOOLCHAIN: "vs-12-2013-xp"
+    #   PROJECT_DIR: examples\benchmark
 
     - TOOLCHAIN: "vs-12-2013"
       PROJECT_DIR: examples\benchmark
@@ -37,11 +37,12 @@ environment:
     - TOOLCHAIN: "vs-14-2015"
       PROJECT_DIR: examples\benchmark
 
-    - TOOLCHAIN: "vs-9-2008"
-      PROJECT_DIR: examples\benchmark
+    # - TOOLCHAIN: "vs-9-2008"
+    #   PROJECT_DIR: examples\benchmark
 
     - TOOLCHAIN: "mingw"
       PROJECT_DIR: examples\benchmark
+      CXX_PATH: 'C:\mingw-w64\i686-5.3.0-posix-dwarf-rt_v4-rev0\mingw32\bin'
 
     - TOOLCHAIN: "msys"
       PROJECT_DIR: examples\benchmark
@@ -78,6 +79,9 @@ install:
 
   # MSYS2 location
   - cmd: set MSYS_PATH=C:\msys64\usr\bin
+
+  # CXX compiler path
+  - if not "%CXX_PATH%"=="" (set "PATH=%PATH%;%CXX_PATH%")
 
 build_script:
   - cmd: python .\jenkins.py
